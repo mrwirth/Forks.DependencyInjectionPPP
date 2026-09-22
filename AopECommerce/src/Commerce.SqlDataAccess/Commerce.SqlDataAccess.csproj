@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>Ploeh.Samples.Commerce.SqlDataAccess</AssemblyName>
     <RootNamespace>Ploeh.Samples.Commerce.SqlDataAccess</RootNamespace>
-    <LangVersion>7</LangVersion>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

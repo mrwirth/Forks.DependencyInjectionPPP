@@ -1,0 +1,13 @@
+<Solution>
+  <Project Path="Commerce.Domain.Tests.Unit/Commerce.Domain.Tests.Unit.csproj" />
+  <Project Path="Commerce.Domain/Commerce.Domain.csproj" />
+  <Project Path="Commerce.ExternalConnections/Commerce.ExternalConnections.csproj" />
+  <Project Path="Commerce.SqlDataAccess.Tests.Integration/Commerce.SqlDataAccess.Tests.Integration.csproj" />
+  <Project Path="Commerce.SqlDataAccess.Tests.Unit/Commerce.SqlDataAccess.Tests.Unit.csproj" />
+  <Project Path="Commerce.SqlDataAccess/Commerce.SqlDataAccess.csproj" />
+  <Project Path="Commerce.Web.Autofac/Commerce.Web.Autofac.csproj" />
+  <Project Path="Commerce.Web.MS.DI/Commerce.Web.MS.DI.csproj" />
+  <Project Path="Commerce.Web.Presentation/Commerce.Web.Presentation.csproj" />
+  <Project Path="Commerce.Web.PureDI/Commerce.Web.PureDI.csproj" />
+  <Project Path="Commerce.Web.SimpleInjector/Commerce.Web.SimpleInjector.csproj" />
+</Solution>
