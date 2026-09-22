@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>Ploeh.Samples.ProductManagement.Domain</AssemblyName>
     <RootNamespace>Ploeh.Samples.ProductManagement.Domain</RootNamespace>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
 
 </Project>

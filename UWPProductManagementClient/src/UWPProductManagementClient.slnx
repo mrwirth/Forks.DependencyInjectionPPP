@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="ProductManagement.DataAccess/04 ProductManagement.DataAccess.csproj">
+    <Platform Solution="*|ARM" Project="ARM" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="ProductManagement.Domain/03 ProductManagement.Domain.csproj" />
+  <Project Path="ProductManagement.PresentationLogic/02 ProductManagement.PresentationLogic.csproj">
+    <Platform Solution="*|ARM" Project="ARM" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="ProductManagement.UWPClient/01 ProductManagement.UWPClient.csproj">
+    <Platform Solution="*|Any CPU" Project="x86" />
+    <Platform Solution="*|ARM" Project="ARM" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+    <Build Solution="Release|Any CPU" Project="false" />
+    <Deploy Solution="*|ARM" />
+    <Deploy Solution="*|x64" />
+    <Deploy Solution="*|x86" />
+    <Deploy Solution="Debug|Any CPU" />
+  </Project>
+</Solution>
