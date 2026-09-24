@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Mary.DomainLogic/Mary.DomainLogic.csproj" />
+  <Project Path="Mary.ECommerce.WebUI/Mary.ECommerce.WebUI.csproj" />
+  <Project Path="Mary.SqlDataAccess/Mary.SqlDataAccess.csproj" />
+</Solution>
