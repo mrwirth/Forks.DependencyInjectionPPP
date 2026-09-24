@@ -23,7 +23,7 @@ namespace Ploeh.Samples.HelloDI.Tests
         public void InitializeWithNullWriterThrows()
         {
             // Act
-            Action action = () => new SecureMessageWriter(writer: null, identity: WindowsIdentity.GetCurrent());
+            Action action = () => new SecureMessageWriter(writer: null, identity: new GenericIdentity("CurrentUser"));
 
             // Arrange
             Assert.Throws<ArgumentNullException>(action);
@@ -75,7 +75,7 @@ namespace Ploeh.Samples.HelloDI.Tests
         {
             return new SecureMessageWriter(
                 writer: writer ?? new SpyMessageWriter(),
-                identity: identity ?? WindowsIdentity.GetCurrent());
+                identity: identity ?? new GenericIdentity("Default"));
         }
 
         public class TestIdentity : IIdentity
