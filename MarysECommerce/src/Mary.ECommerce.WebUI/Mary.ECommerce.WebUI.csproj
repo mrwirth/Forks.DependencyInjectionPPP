@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Mary.DomainLogic\Mary.DomainLogic.csproj" />
     <ProjectReference Include="..\Mary.SqlDataAccess\Mary.SqlDataAccess.csproj" />
   </ItemGroup>
