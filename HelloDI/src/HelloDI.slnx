@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="HelloDI.Console/HelloDI.Console.csproj" />
+  <Project Path="HelloDI.Tests/HelloDI.Tests.csproj" />
+</Solution>
