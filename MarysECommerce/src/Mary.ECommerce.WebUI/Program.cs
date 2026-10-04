@@ -1,23 +1,21 @@
 ﻿using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 
-namespace Ploeh.Samples.Mary.ECommerce.WebUI
-{
-    public static class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateWebHostBuilder(args).Build().Run();
-        }
+namespace Ploeh.Samples.Mary.ECommerce.WebUI;
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration((hostingContext, config) =>
-            {
-                config.SetBasePath(hostingContext.HostingEnvironment.ContentRootPath);
-                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: false);
-            })
-            .UseStartup<Startup>();
+public static class Program
+{
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+        builder.Configuration.SetBasePath(builder.Environment.ContentRootPath);
+        builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: false);
+        var startup = new Startup(builder.Configuration);
+        startup.ConfigureServices(builder.Services);
+        var app = builder.Build();
+        startup.Configure(app, app.Environment);
+        app.Run();
     }
 }
