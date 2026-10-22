@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="Commerce.CurrencyMonitoring/Commerce.CurrencyMonitoring.csproj" />
+  <Project Path="Commerce.Domain.Tests.Unit/Commerce.Domain.Tests.Unit.csproj" />
+  <Project Path="Commerce.Domain/Commerce.Domain.csproj" />
+  <Project Path="Commerce.SqlDataAccess/Commerce.SqlDataAccess.csproj" />
+  <Project Path="Commerce.UpdateCurrency.ApplicationServices/Commerce.UpdateCurrency.ApplicationServices.csproj" />
+  <Project Path="Commerce.UpdateCurrency/Commerce.UpdateCurrency.csproj" />
+  <Project Path="Commerce.Web.Tests.Unit/Commerce.Web.Tests.Unit.csproj" />
+  <Project Path="Commerce.Web/Commerce.Web.csproj" />
+</Solution>
