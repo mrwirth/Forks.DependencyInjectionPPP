@@ -2,6 +2,7 @@
     <PropertyGroup>
         <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+        <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,4 +15,10 @@
         <PackageVersion Include="xunit.v3" Version="4.0.2" />
         <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.1" />
     </ItemGroup>
+
+    <!-- Transitive Pins -->
+    <ItemGroup>
+        <PackageVersion Include="System.Security.Cryptography.Pkcs" Version="10.0.13" />
+    </ItemGroup>
+
 </Project>

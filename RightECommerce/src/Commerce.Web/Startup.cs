@@ -60,11 +60,6 @@ namespace Ploeh.Samples.Commerce.Web
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
-            // app.MapControllerRoute(
-            //         name: "default",
-            //         pattern: "{controller=Home}/{action=Index}/{id?}")
-            //     .WithStaticAssets();
         }
 
         private static void ConfigureMiddleware(IApplicationBuilder app, ILogger logger)

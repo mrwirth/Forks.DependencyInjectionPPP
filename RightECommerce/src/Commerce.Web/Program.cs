@@ -16,6 +16,13 @@ public static class Program
         startup.ConfigureServices(builder.Services);
         var app = builder.Build();
         startup.Configure(app, app.Environment, app.Logger);
+
+        app.UseRouting();
+        app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}")
+            .WithStaticAssets();
+
         app.Run();
     }
 }
