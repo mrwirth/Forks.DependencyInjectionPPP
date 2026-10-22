@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace Ploeh.Samples.Commerce.Web
@@ -29,7 +30,7 @@ namespace Ploeh.Samples.Commerce.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc();
             services.AddHttpContextAccessor();
 
             // Add custom Pure DI Controller Activator
@@ -44,7 +45,7 @@ namespace Ploeh.Samples.Commerce.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger logger)
         {
             if (env.IsDevelopment())
             {
@@ -55,24 +56,20 @@ namespace Ploeh.Samples.Commerce.Web
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            ConfigureMiddleware(app, loggerFactory);
+            ConfigureMiddleware(app, logger);
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            // app.MapControllerRoute(
+            //         name: "default",
+            //         pattern: "{controller=Home}/{action=Index}/{id?}")
+            //     .WithStaticAssets();
         }
 
-        private static void ConfigureMiddleware(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        private static void ConfigureMiddleware(IApplicationBuilder app, ILogger logger)
         {
             // ---- Start code Section 7.3.2 ----
-            var logger = loggerFactory.CreateLogger("Middleware");
-
             app.Use(async (context, next) =>
             {
                 var middleware = new LoggingMiddleware(logger);
