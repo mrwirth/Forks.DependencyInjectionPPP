@@ -17,14 +17,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Commerce.Domain\Commerce.Domain.csproj" />
     <ProjectReference Include="..\Commerce.SqlDataAccess\Commerce.SqlDataAccess.csproj" />
   </ItemGroup>
