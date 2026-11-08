@@ -89,7 +89,7 @@ namespace Ploeh.Samples.Commerce.Web.Tests.Unit.Controllers
 
         private class StubProductService : IProductService
         {
-            public IEnumerable<DiscountedProduct> FeaturedProducts { get; set; } = new DiscountedProduct[0];
+            public IEnumerable<DiscountedProduct> FeaturedProducts { get; set; } = [];
             public IEnumerable<DiscountedProduct> GetFeaturedProducts() => this.FeaturedProducts;
         }
     }

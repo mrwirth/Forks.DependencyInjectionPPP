@@ -10,7 +10,7 @@ namespace Ploeh.Samples.Commerce.SqlDataAccess
 
         public CommerceContext(string connectionString)
         {
-            if (connectionString == null) throw new ArgumentNullException(nameof(connectionString));
+            ArgumentNullException.ThrowIfNull(connectionString);
             if (string.IsNullOrWhiteSpace(connectionString))
                 throw new ArgumentException("Value should not be empty.", nameof(connectionString));
 

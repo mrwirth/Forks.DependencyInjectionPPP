@@ -12,7 +12,7 @@ namespace Ploeh.Samples.Commerce.SqlDataAccess
 
         public SqlProductRepository(CommerceContext context)
         {
-            if (context == null) throw new ArgumentNullException("context");
+            ArgumentNullException.ThrowIfNull(context);
 
             this.context = context;
         }

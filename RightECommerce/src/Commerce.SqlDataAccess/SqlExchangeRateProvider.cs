@@ -11,14 +11,14 @@ namespace Ploeh.Samples.Commerce.SqlDataAccess
 
         public SqlExchangeRateProvider(CommerceContext context)
         {
-            if (context == null) throw new ArgumentNullException(nameof(context));
+            ArgumentNullException.ThrowIfNull(context);
 
             this.context = context;
         }
 
         public ReadOnlyDictionary<Currency, decimal> GetExchangeRatesFor(Currency currency)
         {
-            if (currency == null) throw new ArgumentNullException(nameof(currency));
+            ArgumentNullException.ThrowIfNull(currency);
 
             var rates = this.context.ExchangeRates.ToArray();
 
@@ -33,7 +33,7 @@ namespace Ploeh.Samples.Commerce.SqlDataAccess
 
         public void UpdateExchangeRate(Currency currency, decimal rate)
         {
-            if (currency == null) throw new ArgumentNullException(nameof(currency));
+            ArgumentNullException.ThrowIfNull(currency);
 
             var rates = this.context.ExchangeRates.Single(r => r.CurrencyCode == currency.Code);
 

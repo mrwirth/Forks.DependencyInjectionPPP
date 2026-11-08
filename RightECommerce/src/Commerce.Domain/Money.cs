@@ -12,7 +12,7 @@ namespace Ploeh.Samples.Commerce.Domain
 
         public Money(decimal amount, Currency currency)
         {
-            if (currency == null) throw new ArgumentNullException("currency");
+            ArgumentNullException.ThrowIfNull(currency);
 
             this.Amount = amount;
             this.Currency = currency;
@@ -21,15 +21,11 @@ namespace Ploeh.Samples.Commerce.Domain
 
         public override bool Equals(object obj)
         {
-            var other = obj as Money;
-
-            return other == null
-                ? false
-                : this.Amount.Equals(other.Amount) && this.Currency.Equals(other.Currency);
+            return obj is Money other && (this.Amount.Equals(other.Amount) && this.Currency.Equals(other.Currency));
         }
 
-        public override int GetHashCode() => (this.Amount, this.Currency).GetHashCode();
+        public override int GetHashCode() => HashCode.Combine(this.Amount, this.Currency);
 
-        public override string ToString() => string.Format("{0} {1:f5}", this.Currency, this.Amount);
+        public override string ToString() => $"{this.Currency} {this.Amount:f5}";
     }
 }

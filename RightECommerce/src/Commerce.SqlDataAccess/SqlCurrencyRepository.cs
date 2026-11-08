@@ -11,7 +11,7 @@ namespace Ploeh.Samples.Commerce.SqlDataAccess
 
         public SqlCurrencyRepository(CommerceContext context)
         {
-            if (context == null) throw new ArgumentNullException(nameof(context));
+            ArgumentNullException.ThrowIfNull(context);
 
             this.context = context;
         }

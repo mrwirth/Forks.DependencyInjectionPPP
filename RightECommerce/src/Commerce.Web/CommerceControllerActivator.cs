@@ -16,7 +16,7 @@ namespace Ploeh.Samples.Commerce.Web
 
         public CommerceControllerActivator(CommerceConfiguration configuration)
         {
-            if (configuration == null) throw new ArgumentNullException(nameof(configuration));
+            ArgumentNullException.ThrowIfNull(configuration);
 
             this.configuration = configuration;
 
@@ -24,7 +24,7 @@ namespace Ploeh.Samples.Commerce.Web
             this.userContext = new AspNetUserContextAdapter();
         }
 
-        public object Create(ControllerContext context) => 
+        public object Create(ControllerContext context) =>
             this.Create(context.ActionDescriptor.ControllerTypeInfo.AsType());
 
         public void Release(ControllerContext context, object controller) =>

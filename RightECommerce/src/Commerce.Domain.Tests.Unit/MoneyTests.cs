@@ -6,6 +6,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
     {
         // Tests missing? Send us a pull request.
 
+        [Fact]
         public void ValueEquality_InstanceIsConsideredEqualToItself()
         {
             // Arrange
@@ -15,6 +16,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
             Assert.Equal(money1, money1);
         }
 
+        [Fact]
         public void ValueEquality_TwoInstancesWithSameCurrencyReferenceAndSameAmountAreConsideredEqual()
         {
             // Arrange
@@ -26,6 +28,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
             Assert.Equal(money1, money2);
         }
 
+        [Fact]
         public void ValueEquality_TwoEqualInstancesAreConsideredEqual()
         {
             // Arrange
@@ -36,6 +39,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
             Assert.Equal(money1, money2);
         }
 
+        [Fact]
         public void ValueEquality_InstancesWithDifferentAmountsAreNotConsideredEqual()
         {
             // Arrange
@@ -43,9 +47,10 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
             var money2 = new Money(100.02m, new Currency("USD"));
 
             // Assert
-            Assert.Equal(money1, money2);
+            Assert.NotEqual(money1, money2);
         }
 
+        [Fact]
         public void ValueEquality_InstancesWithDifferentCurrenciesAreNotConsideredEqual()
         {
             // Arrange
@@ -53,7 +58,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
             var money2 = new Money(100.01m, new Currency("EUR"));
 
             // Assert
-            Assert.Equal(money1, money2);
+            Assert.NotEqual(money1, money2);
         }
     }
 }

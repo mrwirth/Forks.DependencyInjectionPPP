@@ -57,7 +57,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
 
             var repository = new StubProductRepository
             {
-                FeaturedProducts = new[] 
+                FeaturedProducts = new[]
                 {
                     new Product { Name = expected.Name, UnitPrice = expected.UnitPrice }
                 }
@@ -141,7 +141,7 @@ namespace Ploeh.Samples.Commerce.Domain.Tests.Unit
 
         private class StubProductRepository : IProductRepository
         {
-            public IEnumerable<Product> FeaturedProducts { get; set; } = Enumerable.Empty<Product>();
+            public IEnumerable<Product> FeaturedProducts { get; set; } = [];
             public IEnumerable<Product> GetFeaturedProducts() => this.FeaturedProducts;
         }
     }
